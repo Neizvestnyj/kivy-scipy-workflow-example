@@ -102,5 +102,5 @@ if __name__ == '__main__':
     recursive_overwrite(arm64_folder, buildozer_ndk_arm64)
     
     for path, subdirs, files in os.walk(LEGACY_NDK):
-    for name in files:
-        print(os.path.join(path, name))
+        for name in files:
+            print(os.path.join(path, name))
