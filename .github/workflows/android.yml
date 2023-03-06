@@ -29,7 +29,10 @@ jobs:
         run: echo "Workspace path is:${{ github.workspace }}"
 
       - name: Download LEGACY_NDK
-        run: sg .ci/ndk_fortran.sh
+        run: | 
+          cd .ci
+          sh ndk_fortran.sh
+          cd ..
 
       - name: Test env
         run: echo $LEGACY_NDK
