@@ -20,6 +20,8 @@ ANDROID_NDK_GFORTRAN_ARCHIVE_ARM="$ANDROID_HOME/gcc-arm-linux-x86_64.tar.bz2"
 
 ANDROID_NDK_DL_URL_LEGACY="https://dl.google.com/android/repository/android-ndk-r$ANDROID_NDK_VERSION_LEGACY-linux-x86_64.zip"
 
+mkdir -p "$ANDROID_HOME"
+
 echo "downloading ndk-r$ANDROID_NDK_VERSION_LEGACY"
 curl --location --progress-bar --continue-at - "$ANDROID_NDK_DL_URL_LEGACY" --output "$ANDROID_NDK_ARCHIVE_LEGACY"
 echo "download_android_ndk_gfortran"
