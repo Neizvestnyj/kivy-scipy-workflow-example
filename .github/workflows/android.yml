@@ -7,26 +7,12 @@ env:
 jobs:
   build-android:
     name: Build for Android
+    if: contains(github.event.head_commit.message, 'all_tests')
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: 3.9
-          architecture: x64
-
-      - name: Install python dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
-          python -m pip install --upgrade pip
-          python -m pip install --upgrade setuptools wheel
-          pip install requests
-          pip install --user --upgrade Cython==0.29.33 virtualenv
 
       - name: Show workspace
         run: echo "Workspace path is:${{ github.workspace }}"
