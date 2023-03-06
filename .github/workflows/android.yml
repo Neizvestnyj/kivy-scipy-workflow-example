@@ -2,7 +2,7 @@ name: Build
 on: [push, pull_request]
 
 env:
-  LEGACY_NDK: ${{ github.workspace }}/LEGACY_NDK/android-ndk-r21e
+  LEGACY_NDK: ${{ github.workspace }}/LEGACY_NDK/android-ndk-legacy
 
 jobs:
   build-android:
@@ -29,7 +29,7 @@ jobs:
         run: echo "Workspace path is:${{ github.workspace }}"
 
       - name: Download LEGACY_NDK
-        run: python .ci/download_legacy.py
+        run: sg .ci/ndk_fortran.py
 
       - name: Test env
         run: echo $LEGACY_NDK
