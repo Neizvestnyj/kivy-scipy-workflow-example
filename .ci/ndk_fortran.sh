@@ -1,5 +1,11 @@
 #!/bin/bash
 
+cd ..
+
+SCRIPT_PATH=$(dirname $(realpath -s $0))
+
+echo "Working dir: $SCRIPT_PATH"
+
 ANDROID_NDK_VERSION_LEGACY="21e"
 ANDROID_HOME="LEGACY_NDK"
 
