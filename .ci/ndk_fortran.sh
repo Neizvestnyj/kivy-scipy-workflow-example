@@ -33,6 +33,7 @@ curl --location --progress-bar --continue-at - \
 echo "extract_android_ndk_legacy:"
 mkdir -p "$ANDROID_NDK_FOLDER_LEGACY" \
 && unzip -q "$ANDROID_NDK_ARCHIVE_LEGACY" -d "$ANDROID_HOME" \
+&& echo unzip -q "unzip $ANDROID_NDK_ARCHIVE_LEGACY to $ANDROID_HOME" \
 && mv "$ANDROID_NDK_FOLDER_LEGACY" "$ANDROID_NDK_HOME_LEGACY" \
 && rm -f "$ANDROID_NDK_ARCHIVE_LEGACY"
 
@@ -40,8 +41,10 @@ echo "extract_android_ndk_gfortran:"
 rm -rf "$ANDROID_NDK_HOME_LEGACY/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/" \
 && mkdir "$ANDROID_NDK_HOME_LEGACY/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/" \
 && tar -xf "$ANDROID_NDK_GFORTRAN_ARCHIVE_ARM64" -C "$ANDROID_NDK_HOME_LEGACY/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/" --strip-components 1 \
+&& echo unzip -q "$ANDROID_NDK_GFORTRAN_ARCHIVE_ARM64 extract to $ANDROID_NDK_HOME_LEGACY/toolchains/aarch64-linux-android-4.9/prebuilt/linux-x86_64/" \
 && rm -f "$ANDROID_NDK_GFORTRAN_ARCHIVE_ARM64" \
 && rm -rf "$ANDROID_NDK_HOME_LEGACY/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/" \
 && mkdir "$ANDROID_NDK_HOME_LEGACY/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/" \
 && tar -xf "$ANDROID_NDK_GFORTRAN_ARCHIVE_ARM" -C "$ANDROID_NDK_HOME_LEGACY/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/" --strip-components 1 \
+&& echo unzip -q "$ANDROID_NDK_GFORTRAN_ARCHIVE_ARM extract to $ANDROID_NDK_HOME_LEGACY/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/" \
 && rm -f "$ANDROID_NDK_GFORTRAN_ARCHIVE_ARM"
