@@ -1,10 +1,10 @@
 [app]
 
-title = Test ST
+title = Test applications
 
-package.name = test_st
+package.name = test_app
 
-package.domain = org.ibdev
+package.domain = org.kivy.test
 
 source.dir = .
 
@@ -40,8 +40,6 @@ android.archs = arm64-v8a, armeabi-v7a
 android.allow_backup = True
 
 p4a.branch = develop
-
-#p4a.source_dir =
 
 p4a.bootstrap = sdl2
 
