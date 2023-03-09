@@ -30,7 +30,10 @@ jobs:
         uses: ArtemSBulgakov/buildozer-action@v1
         id: buildozer
         with:
-          command: buildozer android debug
+          command: |
+              pip uninstall cython
+              pip install -U cython
+              buildozer android debug
           workdir: src
           buildozer_version: master
 
